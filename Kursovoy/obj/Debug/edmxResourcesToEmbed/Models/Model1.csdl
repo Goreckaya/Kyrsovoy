@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="ID_Appointment" />
+    </Key>
+    <Property Name="ID_Appointment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Patient" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_Department" Type="Int32" Nullable="false" />
+    <Property Name="ID_MedicalOfficer" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Appointment_Department" FromRole="Appointment" ToRole="Department" />
+    <NavigationProperty Name="MedicalOfficer" Relationship="Self.FK_Appointment_MedicalOfficer" FromRole="Appointment" ToRole="MedicalOfficer" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK_Appointment_Patient" FromRole="Appointment" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Cabinet">
+    <Key>
+      <PropertyRef Name="ID_Сabinet" />
+    </Key>
+    <Property Name="ID_Сabinet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nomber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="MedicalOfficer" Relationship="Self.FK_MedicalOfficer_Cabinet" FromRole="Cabinet" ToRole="MedicalOfficer" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID_Department" />
+    </Key>
+    <Property Name="ID_Department" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Appointment" Relationship="Self.FK_Appointment_Department" FromRole="Department" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="ID_Gender" />
+    </Key>
+    <Property Name="ID_Gender" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK_Patient_Gender" FromRole="Gender" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="MedicalOfficer">
+    <Key>
+      <PropertyRef Name="ID_MedicalOfficer" />
+    </Key>
+    <Property Name="ID_MedicalOfficer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Gender" Type="Int32" Nullable="false" />
+    <Property Name="ID_Department" Type="Int32" Nullable="false" />
+    <Property Name="ID_Cabinet" Type="Int32" />
+    <NavigationProperty Name="Appointment" Relationship="Self.FK_Appointment_MedicalOfficer" FromRole="MedicalOfficer" ToRole="Appointment" />
+    <NavigationProperty Name="Cabinet" Relationship="Self.FK_MedicalOfficer_Cabinet" FromRole="MedicalOfficer" ToRole="Cabinet" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="ID_Patient" />
+    </Key>
+    <Property Name="ID_Patient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ID_Gender" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Appointment" Relationship="Self.FK_Appointment_Patient" FromRole="Patient" ToRole="Appointment" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK_Patient_Gender" FromRole="Patient" ToRole="Gender" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Vhod">
+    <Key>
+      <PropertyRef Name="ID_Vhod" />
+    </Key>
+    <Property Name="ID_Vhod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Appointment_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID_Department" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="ID_Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_MedicalOfficer">
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalOfficer">
+        <PropertyRef Name="ID_MedicalOfficer" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="ID_MedicalOfficer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="ID_Patient" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="ID_Patient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Cabinet">
+    <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="0..1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cabinet">
+        <PropertyRef Name="ID_Сabinet" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Cabinet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="ID_Gender" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HospitalEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" />
+    <EntitySet Name="Cabinet" EntityType="Self.Cabinet" />
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" />
+    <EntitySet Name="MedicalOfficer" EntityType="Self.MedicalOfficer" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Vhod" EntityType="Self.Vhod" />
+    <AssociationSet Name="FK_Appointment_Department" Association="Self.FK_Appointment_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_MedicalOfficer" Association="Self.FK_Appointment_MedicalOfficer">
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Patient" Association="Self.FK_Appointment_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Cabinet" Association="Self.FK_MedicalOfficer_Cabinet">
+      <End Role="Cabinet" EntitySet="Cabinet" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Gender" Association="Self.FK_Patient_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

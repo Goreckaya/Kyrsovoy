@@ -1,0 +1,46 @@
+﻿<Window x:Class="Kursovoy.Windows.NewAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovoy.Windows"
+        mc:Ignorable="d"
+        Title="NewAppointment" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="711*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="Фамилия:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="FName"/>
+                <Label Height="10"/>
+                <TextBlock Text="Имя:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Name"/>
+                <Label Height="10"/>
+                <TextBlock Text="Отчество:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="LName"/>
+                <Label Height="10"/>
+                <TextBlock Text="Дата и время приема:" FontFamily="Comic Sans MS"/>
+                <DatePicker x:Name="Date"/>
+                <Label Height="10"/>
+                <TextBlock Text="Специалитет:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Department"/>
+                <Label Height="10"/>
+                <TextBlock Text="Врач:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="MedicalOfficer"/>
+
+                <Label Height="10"/>
+                <Button Content="Создать запись" Click="NewAppointment_Click" x:Name="NewAppointmentt" Height="50" Background="#BDE2EB" FontFamily="Comic Sans MS"/>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

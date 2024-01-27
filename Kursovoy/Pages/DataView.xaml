@@ -1,0 +1,27 @@
+﻿<Window x:Class="Kursovoy.Pages.DataView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovoy.Pages"
+        mc:Ignorable="d"
+        Title="DataView" Height="450" Width="800">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="359*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="#BDE2EB" Grid.Row="0" Orientation="Horizontal">
+            <Button Content="Запись на прием" x:Name="Appointment" Margin="5,5,5,4.6" Background="{x:Null}" Width="137"  Click="Appointment_Click" FontFamily="Comic Sans MS"/>
+            <Button Content="Выход" Background="{x:Null}" Width="151" x:Name="Exit"  Margin="490,5,5,4.6"  Click="Exit_Click" Foreground="Black" FontFamily="Comic Sans MS"/>
+
+        </StackPanel>
+        <Frame x:Name="frame"  Grid.Row="1" />
+        <StackPanel Background="#BDE2EB" Grid.Row="4">
+
+        </StackPanel>
+
+    </Grid>
+</Window>
