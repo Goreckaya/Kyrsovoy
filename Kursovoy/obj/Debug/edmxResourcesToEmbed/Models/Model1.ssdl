@@ -58,6 +58,13 @@
     <Property Name="DateOfBirth" Type="date" Nullable="false" />
     <Property Name="ID_Gender" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="RoleID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -75,6 +82,7 @@
     <Property Name="ID_Vhod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Role" Type="int" />
   </EntityType>
   <Association Name="FK_Appointment_Department">
     <End Role="Department" Type="Self.Department" Multiplicity="1" />
@@ -136,6 +144,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Vhod_RoleID">
+    <End Role="RoleID" Type="Self.RoleID" Multiplicity="0..1" />
+    <End Role="Vhod" Type="Self.Vhod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleID">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vhod">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище HospitalModelContainer">
     <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cabinet" EntityType="Self.Cabinet" Schema="dbo" store:Type="Tables" />
@@ -143,6 +163,7 @@
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MedicalOfficer" EntityType="Self.MedicalOfficer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleID" EntityType="Self.RoleID" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vhod" EntityType="Self.Vhod" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Appointment_Department" Association="Self.FK_Appointment_Department">
@@ -164,6 +185,10 @@
     <AssociationSet Name="FK_Patient_Gender" Association="Self.FK_Patient_Gender">
       <End Role="Gender" EntitySet="Gender" />
       <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vhod_RoleID" Association="Self.FK_Vhod_RoleID">
+      <End Role="RoleID" EntitySet="RoleID" />
+      <End Role="Vhod" EntitySet="Vhod" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

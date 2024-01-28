@@ -17,5 +17,8 @@ namespace Kursovoy.Models
         public int ID_Vhod { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public Nullable<int> Role { get; set; }
+    
+        public virtual RoleID RoleID { get; set; }
     }
 }

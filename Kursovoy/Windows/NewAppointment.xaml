@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoy.Windows"
         mc:Ignorable="d"
-        Title="NewAppointment" Height="450" Width="800">
+        Title="NewAppointment" Height="450" Width="800"
+        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>
@@ -32,10 +33,13 @@
                 <DatePicker x:Name="Date"/>
                 <Label Height="10"/>
                 <TextBlock Text="Специалитет:" FontFamily="Comic Sans MS"/>
-                <ComboBox x:Name="Department"/>
+                <ComboBox x:Name="Department" SelectionChanged="Department_SelectionChanged"/>
                 <Label Height="10"/>
                 <TextBlock Text="Врач:" FontFamily="Comic Sans MS"/>
-                <ComboBox x:Name="MedicalOfficer"/>
+                <ComboBox x:Name="MedicalOfficer" SelectionChanged="MedicalOfficer_SelectionChanged"/>
+                <Label Height="10"/>
+                <TextBlock Text="Кабинет:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Cabinet"/>
 
                 <Label Height="10"/>
                 <Button Content="Создать запись" Click="NewAppointment_Click" x:Name="NewAppointmentt" Height="50" Background="#BDE2EB" FontFamily="Comic Sans MS"/>

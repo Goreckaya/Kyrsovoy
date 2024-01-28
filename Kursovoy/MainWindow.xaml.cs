@@ -22,15 +22,15 @@ namespace Kursovoy
     /// </summary>
     public class helper
     {
-        public static HospitalEntities1 ent;
+        public static HospitalEntities3 ent;
         internal static bool flag = false;
         internal static int prioritet = 0;
 
-        public static HospitalEntities1 GetContext()
+        public static HospitalEntities3 GetContext()
         {
             if (ent == null)
             {
-                ent = new HospitalEntities1();
+                ent = new HospitalEntities3();
             }
             return ent;
         }
@@ -47,24 +47,29 @@ namespace Kursovoy
 
             string password = Password.Text.ToString();
             string login = Login.Text.ToString();
-            var EnterAcc = helper.GetContext().Vhod.Where(p => p.Password == "123" && p.Login == "Врач").FirstOrDefault();
+            var EnterAcc = helper.GetContext().Vhod.Where(p => p.Password == password && p.Login == login).FirstOrDefault();
           
 
             if (EnterAcc != null)
             {
-                DataView Form4 = new DataView();
-                Form4.Show();
-                this.Close();
+                
+                if (EnterAcc.Role == 1)
+                {
+                    DataView Form4 = new DataView();
+                    Form4.Show();
+                    this.Close();
+                }    
+               
+               
+                if (EnterAcc.Role == 2)
+                {
 
-            }
-            var EnterAcc1 = helper.GetContext().Vhod.Where(p => p.Password == "456" && p.Login == "Регистратор").FirstOrDefault();
-            if (EnterAcc1 != null)
-            {
+                    DataRegView Form5 = new DataRegView();
+                    Form5.Show();
+                    this.Close();
+                }
 
-                DataRegView Form5 = new DataRegView();
-                Form5.Show();
-                this.Close();
-            }
+            }            
 
             else
             {

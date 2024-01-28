@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoy.Pages"
         mc:Ignorable="d"
-        Title="DataView" Height="450" Width="800">
+        Title="DataView" Height="450" Width="800"  
+        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
     
     <Grid>
         <Grid.RowDefinitions>

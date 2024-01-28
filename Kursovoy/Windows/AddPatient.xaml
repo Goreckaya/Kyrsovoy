@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoy.Windows"
         mc:Ignorable="d"
-        Title="AddPatient" Height="500" Width="900">
+        Title="AddPatient" Height="500" Width="900"
+        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>

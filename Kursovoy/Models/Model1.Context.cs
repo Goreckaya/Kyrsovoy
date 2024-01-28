@@ -13,10 +13,10 @@ namespace Kursovoy.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HospitalEntities1 : DbContext
+    public partial class HospitalEntities3 : DbContext
     {
-        public HospitalEntities1()
-            : base("name=HospitalEntities1")
+        public HospitalEntities3()
+            : base("name=HospitalEntities3")
         {
         }
     
@@ -31,6 +31,7 @@ namespace Kursovoy.Models
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<MedicalOfficer> MedicalOfficer { get; set; }
         public virtual DbSet<Patient> Patient { get; set; }
+        public virtual DbSet<RoleID> RoleID { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Vhod> Vhod { get; set; }
     }

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoy.Windows"
         mc:Ignorable="d"
-        Title="EditPatient" Height="500" Width="900">
+        Title="EditPatient" Height="500" Width="900"
+        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>
@@ -19,14 +20,14 @@
         </Grid.RowDefinitions>
         <ScrollViewer Grid.Row="1" Grid.Column="1">
             <StackPanel>
-                <TextBlock Text="Фамилия:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="FName"/>
+                <TextBlock Text="Фамилия:" FontFamily="Comic Sans MS" />
+                <TextBox x:Name="FName" IsReadOnly="True" />
                 <Label Height="10"/>
                 <TextBlock Text="Имя:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="Name"/>
+                <TextBox x:Name="Name" IsReadOnly="True"/>
                 <Label Height="10"/>
                 <TextBlock Text="Отчество:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="LName"/>
+                <TextBox x:Name="LName" IsReadOnly="True"/>
                 <Label Height="10"/>
                 <TextBlock Text="Номер телефона:" FontFamily="Comic Sans MS"/>
                 <TextBox x:Name="PhoneNumber"/>

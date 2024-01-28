@@ -91,10 +91,29 @@ namespace Kursovoy.Pages
 
         private void NewAppointment_Click(object sender, RoutedEventArgs e)
         {
+            if (PatientView.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите пациента", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            if (PatientView.SelectedIndex != -1)
+            {
+                try
+                {
+                    
+                    
 
-            NewAppointment frm = new NewAppointment();
-            frm.ShowDialog();
-            Load();
+                        var idi = PatientView.SelectedItem as Patient;                        
+                        NewAppointment frm2 = new NewAppointment(idi);
+                        frm2.ShowDialog();
+
+                    
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка удаления", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+           
         }
     }
 }

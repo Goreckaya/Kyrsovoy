@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,48 +21,97 @@ namespace Kursovoy.Windows
     /// </summary>
     public partial class NewAppointment : Window
     {
-
-        public NewAppointment()
+        Patient st;
+        int DepartmentID;
+        int MedicalOfficerID;
+        public NewAppointment(Patient stu)
         {
-            InitializeComponent();
-            //Department.ItemsSource = DepartmentMass;
+            InitializeComponent();           
+            st = stu;
+
+            var DepartmentList = helper.GetContext().Department;
+            foreach (var intem in DepartmentList)
+            {
+                Department.Items.Add(intem.Name);
+            }
+
+
+
+            FName.Text = st.FName;
+            Name.Text = st.Name;
+            LName.Text = st.LName;
+
 
 
 
         }
         private void NewAppointment_Click(object sender, RoutedEventArgs e)
         {
-
-            /*Appointment std = new Appointment
+            try
             {
+                if (MedicalOfficer.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Выберите врача!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }              
+                
+               
+                Appointment std = new Appointment
+                {
+                    ID_Patient = st.ID_Patient,                    
+                    ID_Department = DepartmentID,
+                    Date = (DateTime)Date.SelectedDate,
+                    ID_MedicalOfficer = MedicalOfficerID
 
-                FName = FName.Text,
-                Name = Name.Text,
-                LName = LName.Text,
-                ID_Gender = Gender.SelectedIndex + 1,
-                DateOfBirth = (DateTime)DateOfBirth.SelectedDate,
-                PhoneNumber = PhoneNumber.Text,
-                Address = Address.Text,
 
-            };
-            helper.GetContext().Patient.Add(std);
-            helper.GetContext().SaveChanges();
-            MessageBox.Show("Данные успешно сохранены!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
-            this.Close();
-        }
+                };
+                helper.GetContext().Appointment.Add(std);
+                helper.GetContext().SaveChanges();
+                MessageBox.Show("Данные успешно сохранены!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
             catch
             {
-                MessageBox.Show("Ошибка!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Выберите дату!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-       
-            public string[] DepartmentrMass { get; set; } =
-{
+
+
+
+
+        }
+        public string[] GenderMass { get; set; } =
+       {
             "Мужчина",
             "Женщина"
         };
 
-    }*/
+        private void Department_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+           
+            
+            DepartmentID = Department.SelectedIndex + 1;
+            var MedicalOfficeList = helper.GetContext().MedicalOfficer.Where(P => P.ID_Department == DepartmentID);
+            foreach (var intem in MedicalOfficeList)
+            {
+
+                string Name = intem.FName + " " + intem.Name + " " + intem.LName;
+                MedicalOfficer.Items.Add(Name);
+                MedicalOfficerID = intem.ID_MedicalOfficer;
+
+            }
+
+        }
+
+        private void MedicalOfficer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            var CabinetList = helper.GetContext().MedicalOfficer.Where(P => P.ID_MedicalOfficer == MedicalOfficerID).FirstOrDefault();
+            var idCabinet = CabinetList.ID_Cabinet;
+            var CabinetName = helper.GetContext().Cabinet.Where(P => P.ID_Сabinet == idCabinet).FirstOrDefault();
+            Cabinet.Items.Add(CabinetName.Nomber);
         }
     }
 }
+
