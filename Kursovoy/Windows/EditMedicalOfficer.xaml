@@ -1,0 +1,66 @@
+﻿<Window x:Class="Kursovoy.Windows.EditMedicalOfficer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovoy.Windows"
+        mc:Ignorable="d"
+        Title="EditMedicalOfficer" Height="700" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="711*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="Фамилия:" FontFamily="Comic Sans MS" />
+                <TextBox x:Name="FName"  />
+                <Label Height="10"/>
+                <TextBlock Text="Имя:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Name" />
+                <Label Height="10"/>
+                <TextBlock Text="Отчество:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="LName" />
+               
+               
+                <Label Height="10"/>
+                <TextBlock Text="Дата рождения:" FontFamily="Comic Sans MS"/>
+                <DatePicker x:Name="DateOfBirth"/>
+                <Label Height="10"/>
+                <TextBlock Text="Адрес проживания:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Address"/>
+                <Label Height="10"/>
+               
+                <TextBlock Text="Специализация:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Department"/>
+                <Label Height="10"/>
+                <TextBlock Text="Кабинет:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Cabinet"/>
+                <Label Height="10"/>
+                <TextBlock Text="Номер смены:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Smena"/>
+                <Label Height="10"/>
+                <TextBlock Text="Информация об образовании:"/>
+                <Label Height="10"/>
+                <TextBlock Text="Номер диплома:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Diplom"/>
+                <Label Height="10"/>
+                <TextBlock Text="Название учебного заведения:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Institute"/>
+                <Label Height="10"/>
+              
+
+
+                <Label Height="10"/>
+                <Button Content="Изменить данные" Click="EditPatient_Click" x:Name="EditPatientt" Height="50" Background="#BDE2EB" FontFamily="Comic Sans MS"/>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

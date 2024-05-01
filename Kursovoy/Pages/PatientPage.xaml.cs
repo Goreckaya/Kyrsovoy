@@ -1,4 +1,4 @@
-﻿using Kursovoy.Models;
+﻿using Kursovoy.Model;
 using Kursovoy.Windows;
 using System;
 using System.Collections.Generic;
@@ -25,6 +25,7 @@ namespace Kursovoy.Pages
 
         int page = 0;
         string fnd = "";
+
         public PatientPage()
         {
             InitializeComponent();
@@ -33,6 +34,40 @@ namespace Kursovoy.Pages
         public void Load()
         {
             PatientView.ItemsSource = helper.GetContext().Patient.ToList();
+            if (fnd != "")
+            {
+
+                var data = helper.GetContext().Patient.OrderBy(Client => Client.ID_Patient).Where(Client => Client.FName.Contains(fnd) || Client.Name.Contains(fnd) || Client.LName.Contains(fnd) || Client.PhoneNumber.Contains(fnd) || Client.Address.Contains(fnd)).ToList();
+                PatientView.ItemsSource = data;
+             
+            }
+        }
+        private void Appointment_Click(object sender, RoutedEventArgs e)
+        {
+            /*if (PatientView.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выделите пациента для оформления талона", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            if (PatientView.SelectedIndex != -1)
+            {
+                try
+                {
+                    if (MessageBox.Show("Вы точно хотите оформить талончик?", "Внимание!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+
+                        var idi = PatientView.SelectedItem as Patient;
+
+                        AppointmentWindow Form5 = new AppointmentWindow(idi);
+                        Form5.ShowDialog();
+
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка оформления", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }*/
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
@@ -74,11 +109,25 @@ namespace Kursovoy.Pages
 
         private void rebButton_Click(object sender, RoutedEventArgs e)
         {
+            if (PatientView.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите пациента", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            if (PatientView.SelectedIndex != -1)
+            {
+                try
+                {
 
-            var St = PatientView.SelectedItem as Patient;
-            EditPatient frm = new EditPatient(St);
-            frm.ShowDialog();
-            Load();
+                    var St = PatientView.SelectedItem as Patient;
+                    EditPatient frm = new EditPatient(St);
+                    frm.ShowDialog();
+                    Load();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
 
         }
 
@@ -99,21 +148,19 @@ namespace Kursovoy.Pages
             {
                 try
                 {
-                    
-                    
 
-                        var idi = PatientView.SelectedItem as Patient;                        
-                        NewAppointment frm2 = new NewAppointment(idi);
-                        frm2.ShowDialog();
+                    var idi = PatientView.SelectedItem as Patient;
+                    NewAppointment frm2 = new NewAppointment(idi);
+                    frm2.ShowDialog();
+                    Load();
 
-                    
                 }
                 catch
                 {
-                    MessageBox.Show("Ошибка удаления", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Ошибка", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-           
+
         }
     }
 }

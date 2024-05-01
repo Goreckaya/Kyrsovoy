@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kursovoy.Windows"
         mc:Ignorable="d"
         Title="NewAppointment" Height="450" Width="800"
-        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
+       >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>
@@ -20,26 +20,40 @@
         </Grid.RowDefinitions>
         <ScrollViewer Grid.Row="1" Grid.Column="1">
             <StackPanel>
-                <TextBlock Text="Фамилия:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="FName"/>
-                <Label Height="10"/>
-                <TextBlock Text="Имя:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="Name"/>
-                <Label Height="10"/>
-                <TextBlock Text="Отчество:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="LName"/>
-                <Label Height="10"/>
-                <TextBlock Text="Дата и время приема:" FontFamily="Comic Sans MS"/>
-                <DatePicker x:Name="Date"/>
-                <Label Height="10"/>
+                
                 <TextBlock Text="Специалитет:" FontFamily="Comic Sans MS"/>
                 <ComboBox x:Name="Department" SelectionChanged="Department_SelectionChanged"/>
                 <Label Height="10"/>
-                <TextBlock Text="Врач:" FontFamily="Comic Sans MS"/>
+                <TextBlock Text="Врач:" FontFamily="Comic Sans MS"/>                
                 <ComboBox x:Name="MedicalOfficer" SelectionChanged="MedicalOfficer_SelectionChanged"/>
+                <Label Height="10"/>
+                <TextBlock Text="Дата приема:" FontFamily="Comic Sans MS"/>
+                <DatePicker x:Name="Date" SelectedDateChanged="Date_SelectedDateChanged"/>
+                <Label Height="10"/>
+                <TextBlock Text="Время:" FontFamily="Comic Sans MS"/>               
+                
+                <StackPanel x:Name="Time1" Orientation="Horizontal" Width="auto"/>
+                <StackPanel x:Name="Time2" Orientation="Horizontal" Width="auto"/>
+                <StackPanel x:Name="Time3" Orientation="Horizontal" Width="auto" />
+                <Label Height="10"/>
+                <Button x:Name="TimeReset" Content="Выбрать другое время" Background="#BDE2EB" FontFamily="Comic Sans MS" Click="TimeReset_Click"/>
+                <Label Height="10"/>
+                <TextBlock Text="Статус приема:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="StatusPriema"/>
                 <Label Height="10"/>
                 <TextBlock Text="Кабинет:" FontFamily="Comic Sans MS"/>
                 <ComboBox x:Name="Cabinet"/>
+                <Label Height="10"/>
+                <TextBlock Text="Фамилия:" FontFamily="Comic Sans MS"/>
+                <TextBlock x:Name="FName"/>
+                <Label Height="10"/>
+                <TextBlock Text="Имя:" FontFamily="Comic Sans MS"/>
+                <TextBlock x:Name="Name"/>
+                <Label Height="10"/>
+                <TextBlock Text="Отчество:" FontFamily="Comic Sans MS"/>
+                <TextBlock x:Name="LName"/>
+                <Label Height="10"/>
+                
 
                 <Label Height="10"/>
                 <Button Content="Создать запись" Click="NewAppointment_Click" x:Name="NewAppointmentt" Height="50" Background="#BDE2EB" FontFamily="Comic Sans MS"/>

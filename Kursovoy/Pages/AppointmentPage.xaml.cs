@@ -27,7 +27,7 @@ namespace Kursovoy.Pages
         }
         public void Load()
         {
-            AppointmentView.ItemsSource = helper.GetContext().Appointment.ToList();
+            //AppointmentView.ItemsSource = helper.GetContext().Appointment.ToList();
         }
     }
 }

@@ -1,0 +1,55 @@
+﻿<Window x:Class="Kursovoy.Windows.AppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovoy.Windows"
+        mc:Ignorable="d"
+        Title="AppointmentWindow" Height="450" Width="800"
+          >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="721*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="382*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+
+        <FlowDocumentReader Grid.Row="1" Grid.Column="1">
+            <FlowDocument Name="flowDoc">
+                <BlockUIContainer>
+                    <StackPanel HorizontalAlignment="Center" Width="329">
+                        <TextBlock Text="Талон на прием" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Пациент:"/>
+                        <TextBlock Text="{Binding OrderID}" x:Name="PacientName"/>
+                        
+                        <TextBlock Text="Дата и время приема:"/>
+                        <TextBlock Text="{Binding Order_date}" x:Name="Date"/>
+                        <TextBlock Text="{Binding Order_date}" x:Name="Time"/>
+
+                        <TextBlock Text="Врач:"/>
+                        <TextBlock x:Name="Department"/>
+                        <TextBlock x:Name="Officer"/>
+                        
+                        <TextBlock Text="Кабинет: "/>
+                        <TextBlock x:Name="NumberCabinet"/>
+
+                        <TextBlock Text="Статус приема: "/>
+                        <TextBlock x:Name="StatusPriema"/>
+
+                    </StackPanel>
+                </BlockUIContainer>
+
+            </FlowDocument>
+        </FlowDocumentReader>
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Button x:Name="SavePDF" Content="Сохранить" Click="PDFSave_Clicl" Background="#BDE2EB"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

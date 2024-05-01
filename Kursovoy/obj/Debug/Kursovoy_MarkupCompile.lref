@@ -1,11 +1,18 @@
 ﻿
 
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\MainWindow.xaml;;
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Pages\AppointmentPage.xaml;;
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Pages\DataRegView.xaml;;
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Pages\DataView.xaml;;
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Pages\PatientPage.xaml;;
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Windows\AddPatient.xaml;;
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Windows\EditPatient.xaml;;
-FC:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Windows\NewAppointment.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\MainWindow.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Pages\AdminView.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Pages\AppointmentPage.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Pages\DataRegView.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Pages\DataView.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Pages\MedOfficerPage.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Pages\PatientPage.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\AddPatient.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\AppointmentWindow.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\EditMedicalOfficer.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\EditPatient.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\LechenieWindow.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\NewAppointment.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\PatienOformlenie.xaml;;
+FC:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\Windows\AddMedOfficer.xaml;;
 

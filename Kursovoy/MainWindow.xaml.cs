@@ -1,4 +1,4 @@
-﻿using Kursovoy.Models;
+﻿using Kursovoy.Model;
 using Kursovoy.Pages;
 using System;
 using System.Collections.Generic;
@@ -22,15 +22,15 @@ namespace Kursovoy
     /// </summary>
     public class helper
     {
-        public static HospitalEntities3 ent;
+        public static HospitalKPEntities3 ent;
         internal static bool flag = false;
         internal static int prioritet = 0;
 
-        public static HospitalEntities3 GetContext()
+        public static HospitalKPEntities3 GetContext()
         {
             if (ent == null)
             {
-                ent = new HospitalEntities3();
+                ent = new HospitalKPEntities3();
             }
             return ent;
         }
@@ -45,7 +45,7 @@ namespace Kursovoy
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
 
-            string password = Password.Text.ToString();
+            string password = Password.Password.ToString();
             string login = Login.Text.ToString();
             var EnterAcc = helper.GetContext().Vhod.Where(p => p.Password == password && p.Login == login).FirstOrDefault();
           
@@ -55,7 +55,8 @@ namespace Kursovoy
                 
                 if (EnterAcc.Role == 1)
                 {
-                    DataView Form4 = new DataView();
+                    int id = EnterAcc.ID_Vhod;
+                    DataView Form4 = new DataView(id);
                     Form4.Show();
                     this.Close();
                 }    
@@ -63,9 +64,17 @@ namespace Kursovoy
                
                 if (EnterAcc.Role == 2)
                 {
-
-                    DataRegView Form5 = new DataRegView();
+                    int id = EnterAcc.ID_Vhod;
+                    DataRegView Form5 = new DataRegView(id);
                     Form5.Show();
+                    this.Close();
+                }
+                
+                if (EnterAcc.Role == 3)
+                {
+                    int id = EnterAcc.ID_Vhod;
+                    AdminView Form6 = new AdminView(id);
+                    Form6.Show();
                     this.Close();
                 }
 

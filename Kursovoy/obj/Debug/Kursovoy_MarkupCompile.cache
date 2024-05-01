@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\
 Kursovoy
 none
 false
 DEBUG;TRACE
-C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\App.xaml
-81625456770
-2-1223955081
-241456992055
-18-137110027
-MainWindow.xaml;Pages\AppointmentPage.xaml;Pages\DataRegView.xaml;Pages\DataView.xaml;Pages\PatientPage.xaml;Windows\AddPatient.xaml;Windows\EditPatient.xaml;Windows\NewAppointment.xaml;
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\App.xaml
+15-386173044
+2-1556844510
+34251490184
+181371857887
+MainWindow.xaml;Pages\AdminView.xaml;Pages\AppointmentPage.xaml;Pages\DataRegView.xaml;Pages\DataView.xaml;Pages\MedOfficerPage.xaml;Pages\PatientPage.xaml;Windows\AddMedOfficer.xaml;Windows\AddPatient.xaml;Windows\AppointmentWindow.xaml;Windows\EditMedicalOfficer.xaml;Windows\EditPatient.xaml;Windows\LechenieWindow.xaml;Windows\NewAppointment.xaml;Windows\PatienOformlenie.xaml;
 
 False
 

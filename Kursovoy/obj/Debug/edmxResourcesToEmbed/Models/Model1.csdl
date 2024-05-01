@@ -50,8 +50,10 @@
     <Property Name="ID_Gender" Type="Int32" Nullable="false" />
     <Property Name="ID_Department" Type="Int32" Nullable="false" />
     <Property Name="ID_Cabinet" Type="Int32" />
+    <Property Name="ID_Vhod" Type="Int32" />
     <NavigationProperty Name="Appointment" Relationship="Self.FK_Appointment_MedicalOfficer" FromRole="MedicalOfficer" ToRole="Appointment" />
     <NavigationProperty Name="Cabinet" Relationship="Self.FK_MedicalOfficer_Cabinet" FromRole="MedicalOfficer" ToRole="Cabinet" />
+    <NavigationProperty Name="Vhod" Relationship="Self.FK_MedicalOfficer_Vhod" FromRole="MedicalOfficer" ToRole="Vhod" />
   </EntityType>
   <EntityType Name="Patient">
     <Key>
@@ -94,6 +96,7 @@
     <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Role" Type="Int32" />
+    <NavigationProperty Name="MedicalOfficer" Relationship="Self.FK_MedicalOfficer_Vhod" FromRole="Vhod" ToRole="MedicalOfficer" />
     <NavigationProperty Name="RoleID" Relationship="Self.FK_Vhod_RoleID" FromRole="Vhod" ToRole="RoleID" />
   </EntityType>
   <Association Name="FK_Appointment_Department">
@@ -156,6 +159,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_MedicalOfficer_Vhod">
+    <End Role="Vhod" Type="Self.Vhod" Multiplicity="0..1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vhod">
+        <PropertyRef Name="ID_Vhod" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Vhod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Vhod_RoleID">
     <End Role="RoleID" Type="Self.RoleID" Multiplicity="0..1" />
     <End Role="Vhod" Type="Self.Vhod" Multiplicity="*" />
@@ -168,7 +183,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="HospitalEntities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="HospitalEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Appointment" EntityType="Self.Appointment" />
     <EntitySet Name="Cabinet" EntityType="Self.Cabinet" />
     <EntitySet Name="Department" EntityType="Self.Department" />
@@ -197,6 +212,10 @@
     <AssociationSet Name="FK_Patient_Gender" Association="Self.FK_Patient_Gender">
       <End Role="Gender" EntitySet="Gender" />
       <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Vhod" Association="Self.FK_MedicalOfficer_Vhod">
+      <End Role="Vhod" EntitySet="Vhod" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
     </AssociationSet>
     <AssociationSet Name="FK_Vhod_RoleID" Association="Self.FK_Vhod_RoleID">
       <End Role="RoleID" EntitySet="RoleID" />

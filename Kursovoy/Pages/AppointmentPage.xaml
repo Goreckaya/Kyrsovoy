@@ -21,39 +21,29 @@
             <RowDefinition Height="34*"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="AppointmentView" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=3}" >
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition Width="auto"/>
+        <FlowDocumentReader Grid.Row="2" Grid.Column="1">
+            <FlowDocument Name="flowDoc">
+                <BlockUIContainer>
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="Дата приема"/>
+                        <TextBlock Text="{Binding Order_date}"/>
+
+                        <TextBlock Text="ФИО пациента:"/>
+                        <TextBlock Text="{Binding OrderID}"/>
+                        <TextBlock Text="ФИО врача:"/>
+                        <TextBlock x:Name="txtProdutctList"/>
+
+                        <TextBlock Text="Номер кабинета: "/>
+                        <TextBlock x:Name="txtCost"/>
+
+                        
 
 
+                    </StackPanel>
+                </BlockUIContainer>
 
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0" Margin="5">
-                                <TextBlock Text="{Binding Path = Patient.FName}" FontFamily="Comic Sans MS"></TextBlock>
-                                <TextBlock Text="{Binding Path = Patient.Name}" FontFamily="Comic Sans MS"></TextBlock>
-                                <TextBlock Text="{Binding Path = Patient.LName}" FontFamily="Comic Sans MS"></TextBlock>
-                                <TextBlock Text="{Binding Date, StringFormat='Дата и время приема: {0}'}" FontFamily="Comic Sans MS"></TextBlock>
-                            </StackPanel>
-
-
-                        </Grid>
-                    </Border>
-
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>
+            </FlowDocument>
+        </FlowDocumentReader>
 
     </Grid>
 </Page>

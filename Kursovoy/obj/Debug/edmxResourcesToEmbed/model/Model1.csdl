@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalKPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="ID_Appointment" />
+    </Key>
+    <Property Name="ID_Appointment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Patient" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_Department" Type="Int32" Nullable="false" />
+    <Property Name="ID_MedicalOfficer" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_StatusPriema" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="StatusPriema" Relationship="Self.FK_Appointment_StatusPriema" FromRole="Appointment" ToRole="StatusPriema" />
+  </EntityType>
+  <EntityType Name="Cabinet">
+    <Key>
+      <PropertyRef Name="ID_Сabinet" />
+    </Key>
+    <Property Name="ID_Сabinet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nomber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="MedicalOfficer" Relationship="Self.FK_MedicalOfficer_Cabinet" FromRole="Cabinet" ToRole="MedicalOfficer" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID_Department" />
+    </Key>
+    <Property Name="ID_Department" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MedicalOfficer" Relationship="Self.FK_MedicalOfficer_Department" FromRole="Department" ToRole="MedicalOfficer" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="ID_Gender" />
+    </Key>
+    <Property Name="ID_Gender" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MedicalOfficer" Relationship="Self.FK_MedicalOfficer_Gender" FromRole="Gender" ToRole="MedicalOfficer" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK_Patient_Gender" FromRole="Gender" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Grajdanstvo">
+    <Key>
+      <PropertyRef Name="ID_Grajdanstvo" />
+    </Key>
+    <Property Name="ID_Grajdanstvo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK_Patient_Grajdanstvo" FromRole="Grajdanstvo" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="MedicalOfficer">
+    <Key>
+      <PropertyRef Name="ID_MedicalOfficer" />
+    </Key>
+    <Property Name="ID_MedicalOfficer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Gender" Type="Int32" Nullable="false" />
+    <Property Name="ID_Department" Type="Int32" Nullable="false" />
+    <Property Name="ID_Cabinet" Type="Int32" Nullable="false" />
+    <Property Name="ID_Vhod" Type="Int32" />
+    <Property Name="Smena" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StajRaboty" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Diplom" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Institute" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cabinet" Relationship="Self.FK_MedicalOfficer_Cabinet" FromRole="MedicalOfficer" ToRole="Cabinet" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_MedicalOfficer_Department" FromRole="MedicalOfficer" ToRole="Department" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK_MedicalOfficer_Gender" FromRole="MedicalOfficer" ToRole="Gender" />
+    <NavigationProperty Name="Vhod" Relationship="Self.FK_MedicalOfficer_Vhod" FromRole="MedicalOfficer" ToRole="Vhod" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="ID_Patient" />
+    </Key>
+    <Property Name="ID_Patient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ID_Gender" Type="Int32" Nullable="false" />
+    <Property Name="Snils" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pasport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_Grajdanstvo" Type="Int32" Nullable="false" />
+    <Property Name="ID_Status" Type="Int32" Nullable="false" />
+    <Property Name="Polis" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK_Patient_Gender" FromRole="Patient" ToRole="Gender" />
+    <NavigationProperty Name="Grajdanstvo" Relationship="Self.FK_Patient_Grajdanstvo" FromRole="Patient" ToRole="Grajdanstvo" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_Patient_Status" FromRole="Patient" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="RoleID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Vhod" Relationship="Self.FK_Vhod_RoleID" FromRole="RoleID" ToRole="Vhod" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID_Status" />
+    </Key>
+    <Property Name="ID_Status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK_Patient_Status" FromRole="Status" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="StatusPriema">
+    <Key>
+      <PropertyRef Name="ID_StatusPriema" />
+    </Key>
+    <Property Name="ID_StatusPriema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Appointment" Relationship="Self.FK_Appointment_StatusPriema" FromRole="StatusPriema" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Vhod">
+    <Key>
+      <PropertyRef Name="ID_Vhod" />
+    </Key>
+    <Property Name="ID_Vhod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="Int32" />
+    <NavigationProperty Name="MedicalOfficer" Relationship="Self.FK_MedicalOfficer_Vhod" FromRole="Vhod" ToRole="MedicalOfficer" />
+    <NavigationProperty Name="RoleID" Relationship="Self.FK_Vhod_RoleID" FromRole="Vhod" ToRole="RoleID" />
+  </EntityType>
+  <Association Name="FK_Appointment_StatusPriema">
+    <End Role="StatusPriema" Type="Self.StatusPriema" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusPriema">
+        <PropertyRef Name="ID_StatusPriema" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="ID_StatusPriema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Cabinet">
+    <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cabinet">
+        <PropertyRef Name="ID_Сabinet" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Cabinet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID_Department" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="ID_Gender" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="ID_Gender" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Grajdanstvo">
+    <End Role="Grajdanstvo" Type="Self.Grajdanstvo" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grajdanstvo">
+        <PropertyRef Name="ID_Grajdanstvo" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Grajdanstvo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Vhod">
+    <End Role="Vhod" Type="Self.Vhod" Multiplicity="0..1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vhod">
+        <PropertyRef Name="ID_Vhod" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Vhod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID_Status" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vhod_RoleID">
+    <End Role="RoleID" Type="Self.RoleID" Multiplicity="0..1" />
+    <End Role="Vhod" Type="Self.Vhod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleID">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vhod">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HospitalKPEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" />
+    <EntitySet Name="Cabinet" EntityType="Self.Cabinet" />
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" />
+    <EntitySet Name="Grajdanstvo" EntityType="Self.Grajdanstvo" />
+    <EntitySet Name="MedicalOfficer" EntityType="Self.MedicalOfficer" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" />
+    <EntitySet Name="RoleID" EntityType="Self.RoleID" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="StatusPriema" EntityType="Self.StatusPriema" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Vhod" EntityType="Self.Vhod" />
+    <AssociationSet Name="FK_Appointment_StatusPriema" Association="Self.FK_Appointment_StatusPriema">
+      <End Role="StatusPriema" EntitySet="StatusPriema" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Cabinet" Association="Self.FK_MedicalOfficer_Cabinet">
+      <End Role="Cabinet" EntitySet="Cabinet" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Department" Association="Self.FK_MedicalOfficer_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Gender" Association="Self.FK_MedicalOfficer_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Gender" Association="Self.FK_Patient_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Grajdanstvo" Association="Self.FK_Patient_Grajdanstvo">
+      <End Role="Grajdanstvo" EntitySet="Grajdanstvo" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Vhod" Association="Self.FK_MedicalOfficer_Vhod">
+      <End Role="Vhod" EntitySet="Vhod" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Status" Association="Self.FK_Patient_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vhod_RoleID" Association="Self.FK_Vhod_RoleID">
+      <End Role="RoleID" EntitySet="RoleID" />
+      <End Role="Vhod" EntitySet="Vhod" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

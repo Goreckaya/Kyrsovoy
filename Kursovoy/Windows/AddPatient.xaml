@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoy.Windows"
         mc:Ignorable="d"
-        Title="AddPatient" Height="500" Width="900"
-        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
+        Title="AddPatient" Height="740" Width="965"
+      >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>
@@ -40,7 +40,24 @@
                 <Label Height="10"/>
                 <TextBlock Text="Пол:" FontFamily="Comic Sans MS"/>
                 <ComboBox x:Name="Gender"/>
+                <Label Height="10"/>
+                <TextBlock Text="Полис:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Polis"/>
+                <Label Height="10"/>
+                <TextBlock Text="Серия и номер паспорта:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Pasport"/>
+                <Label Height="10"/>
+                <TextBlock Text="Номер снилс:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Snils"/>
+                <Label Height="10"/>
+                <TextBlock Text="Гражданство:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Grajdanstvo"/>
+                <Label Height="10"/>
+                <TextBlock Text="Статус:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Status"/>
 
+
+                <Label Height="10"/>
                 <Label Height="10"/>
                 <Button Content="Добавить пользователя" Click="AddPatient_Click" x:Name="AddPatientt" Height="50" Background="#BDE2EB" FontFamily="Comic Sans MS"/>
             </StackPanel>

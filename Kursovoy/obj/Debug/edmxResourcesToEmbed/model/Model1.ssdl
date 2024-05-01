@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище HospitalKPModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="ID_Appointment" />
+    </Key>
+    <Property Name="ID_Appointment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Patient" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="ID_Department" Type="int" Nullable="false" />
+    <Property Name="ID_MedicalOfficer" Type="int" Nullable="false" />
+    <Property Name="Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_StatusPriema" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cabinet">
+    <Key>
+      <PropertyRef Name="ID_Сabinet" />
+    </Key>
+    <Property Name="ID_Сabinet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nomber" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID_Department" />
+    </Key>
+    <Property Name="ID_Department" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="ID_Gender" />
+    </Key>
+    <Property Name="ID_Gender" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grajdanstvo">
+    <Key>
+      <PropertyRef Name="ID_Grajdanstvo" />
+    </Key>
+    <Property Name="ID_Grajdanstvo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MedicalOfficer">
+    <Key>
+      <PropertyRef Name="ID_MedicalOfficer" />
+    </Key>
+    <Property Name="ID_MedicalOfficer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LName" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_Gender" Type="int" Nullable="false" />
+    <Property Name="ID_Department" Type="int" Nullable="false" />
+    <Property Name="ID_Cabinet" Type="int" Nullable="false" />
+    <Property Name="ID_Vhod" Type="int" />
+    <Property Name="Smena" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StajRaboty" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Diplom" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Institute" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="ID_Patient" />
+    </Key>
+    <Property Name="ID_Patient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="ID_Gender" Type="int" Nullable="false" />
+    <Property Name="Snils" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Pasport" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_Grajdanstvo" Type="int" Nullable="false" />
+    <Property Name="ID_Status" Type="int" Nullable="false" />
+    <Property Name="Polis" Type="nvarchar" MaxLength="16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID_Status" />
+    </Key>
+    <Property Name="ID_Status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusPriema">
+    <Key>
+      <PropertyRef Name="ID_StatusPriema" />
+    </Key>
+    <Property Name="ID_StatusPriema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Vhod">
+    <Key>
+      <PropertyRef Name="ID_Vhod" />
+    </Key>
+    <Property Name="ID_Vhod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Role" Type="int" />
+  </EntityType>
+  <Association Name="FK_Appointment_StatusPriema">
+    <End Role="StatusPriema" Type="Self.StatusPriema" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusPriema">
+        <PropertyRef Name="ID_StatusPriema" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="ID_StatusPriema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Cabinet">
+    <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cabinet">
+        <PropertyRef Name="ID_Сabinet" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Cabinet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID_Department" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="ID_Gender" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalOfficer_Vhod">
+    <End Role="Vhod" Type="Self.Vhod" Multiplicity="0..1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vhod">
+        <PropertyRef Name="ID_Vhod" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Vhod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="ID_Gender" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Grajdanstvo">
+    <End Role="Grajdanstvo" Type="Self.Grajdanstvo" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grajdanstvo">
+        <PropertyRef Name="ID_Grajdanstvo" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Grajdanstvo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID_Status" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vhod_RoleID">
+    <End Role="RoleID" Type="Self.RoleID" Multiplicity="0..1" />
+    <End Role="Vhod" Type="Self.Vhod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleID">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vhod">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище HospitalKPModelContainer">
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cabinet" EntityType="Self.Cabinet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grajdanstvo" EntityType="Self.Grajdanstvo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicalOfficer" EntityType="Self.MedicalOfficer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleID" EntityType="Self.RoleID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusPriema" EntityType="Self.StatusPriema" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vhod" EntityType="Self.Vhod" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Appointment_StatusPriema" Association="Self.FK_Appointment_StatusPriema">
+      <End Role="StatusPriema" EntitySet="StatusPriema" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Cabinet" Association="Self.FK_MedicalOfficer_Cabinet">
+      <End Role="Cabinet" EntitySet="Cabinet" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Department" Association="Self.FK_MedicalOfficer_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Gender" Association="Self.FK_MedicalOfficer_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Vhod" Association="Self.FK_MedicalOfficer_Vhod">
+      <End Role="Vhod" EntitySet="Vhod" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Gender" Association="Self.FK_Patient_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Grajdanstvo" Association="Self.FK_Patient_Grajdanstvo">
+      <End Role="Grajdanstvo" EntitySet="Grajdanstvo" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Status" Association="Self.FK_Patient_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vhod_RoleID" Association="Self.FK_Vhod_RoleID">
+      <End Role="RoleID" EntitySet="RoleID" />
+      <End Role="Vhod" EntitySet="Vhod" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

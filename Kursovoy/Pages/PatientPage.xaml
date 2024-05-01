@@ -18,14 +18,18 @@
             <ColumnDefinition Width="138*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="8*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="11*" />
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="150*" />
+            <RowDefinition Height="41*" />
+            <RowDefinition Height="41*" />
+            <RowDefinition Height="41*" />
+
 
         </Grid.RowDefinitions>
 
-        <Grid Height="41" VerticalAlignment="Center" Grid.ColumnSpan="4">
+        <Grid Height="41" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.RowSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="125*"/>
                 <ColumnDefinition Width="200*"/>
@@ -33,11 +37,12 @@
                 <ColumnDefinition Width="120"></ColumnDefinition>
                 <ColumnDefinition Width="140"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-           
+
         </Grid>
 
 
-        <ListView x:Name="PatientView" Grid.Row="1" Grid.Column="0" Margin="5,0,5,0" d:ItemsSource="{d:SampleData ItemCount=1}" Height="317" VerticalAlignment="Center" Grid.ColumnSpan="4">
+
+        <ListView x:Name="PatientView" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Margin="5,0,5,0" d:ItemsSource="{d:SampleData ItemCount=100}"  VerticalAlignment="Top" Grid.ColumnSpan="4">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Фамилия" Width="Auto">
@@ -82,24 +87,63 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Пол" Width="Auto">
+                    <GridViewColumn Header="Паспорт" Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path = Gender.Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Pasport}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    <GridViewColumn Header="СНИЛС" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Snils}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Полис" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Polis}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Гражданство" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path = Grajdanstvo.Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Статус" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path = Status.Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Grid.Row="2" Grid.Column="1" Margin="0,41,0,0" Grid.RowSpan="2" Grid.ColumnSpan="3">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="762">
-                <Button x:Name="deleteButton" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold" Foreground="Black" Cursor="Hand" Width="163" Grid.Column="2" Content="Удалить пациента" Click="deleteButton_Click" />
-                <Button x:Name="addButton" Margin="5" Height="30" BorderBrush="Black"  Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="163" Grid.Column="1" Content="Добавить пациента" Click="addButton_Click" />
-                <Button x:Name="rebButton" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="163" Grid.Column="1" Content="Изменить данные" Click="rebButton_Click"  />
-                <Button x:Name="NewAppointment" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="163" Grid.Column="1" Content="Создать запись" Click="NewAppointment_Click"  />
+        
+            <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="762">
+                <Button x:Name="deleteButton" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold" Foreground="Black" Cursor="Hand" Width="130" Grid.Column="2" Content="Удалить пациента" Click="deleteButton_Click" />
+            <Button x:Name="addButton" Margin="5" Height="30" BorderBrush="Black"  Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="130" Grid.Column="1" Content="Добавить пациента" Click="addButton_Click" />
+            <Button x:Name="rebButton" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="130" Grid.Column="1" Content="Изменить данные" Click="rebButton_Click"  />
+            <Button x:Name="NewAppointment" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="130" Grid.Column="1" Content="Создать запись" Click="NewAppointment_Click"  />
+               
             </StackPanel>
-        </Grid>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <Label Content="Поиск:" Height="26"/>
+            
+            <TextBox x:Name="SerachCitizen" Width="198" Height="26"  TextChanged="TextBox_TextChanged"/>
+            <StackPanel Margin="180,10,0,0" >
+                <Label Content="Пациенты:" BorderBrush="Black" FontSize="20"/>
+            </StackPanel>
+
+        </StackPanel>
+       
 
     </Grid>
 </Page>

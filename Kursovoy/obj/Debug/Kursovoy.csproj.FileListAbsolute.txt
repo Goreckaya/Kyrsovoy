@@ -70,3 +70,62 @@ C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Kursovoy.csproj.CoreComp
 C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Kursovoy.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Kursovoy.exe
 C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Kursovoy.pdb
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\AppointmentWindow.g.cs
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\AppointmentWindow.baml
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\EditMedicalOfficer.g.cs
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\EditMedicalOfficer.baml
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Pages\OfficerViewPage.g.cs
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Pages\OfficerViewPage.baml
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\PatienOformlenie.g.cs
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\PatienOformlenie.baml
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\LechenieWindow.g.cs
+C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\obj\Debug\Windows\LechenieWindow.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy.csproj.AssemblyReference.cache
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\MainWindow.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\AppointmentPage.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\DataRegView.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\DataView.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\PatientPage.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\AddPatient.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\AppointmentWindow.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\EditMedicalOfficer.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\EditPatient.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\LechenieWindow.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\NewAppointment.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\PatienOformlenie.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\App.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy_Content.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy_MarkupCompile.cache
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy_MarkupCompile.lref
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy.exe
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy.pdb
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\Kursovoy.exe.config
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\Kursovoy.exe
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\Kursovoy.pdb
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\EntityFramework.dll
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\EntityFramework.xml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\MainWindow.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\AppointmentPage.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\DataRegView.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\DataView.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\PatientPage.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\AddPatient.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\AppointmentWindow.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\EditMedicalOfficer.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\EditPatient.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\LechenieWindow.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\NewAppointment.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\PatienOformlenie.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy.g.resources
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy.Properties.Resources.resources
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy.csproj.GenerateResource.cache
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Kursovoy.csproj.CoreCompileInputs.cache
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\AdminView.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\MedOfficerPage.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\AdminView.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Pages\MedOfficerPage.baml
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\AddMedOfficer.g.cs
+C:\Users\Горецкая Ольга\source\repos\Kyrsovoyy\Kursovoy\obj\Debug\Windows\AddMedOfficer.baml

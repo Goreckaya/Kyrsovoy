@@ -31,7 +31,7 @@
             <TextBlock Text="Логин"  x:Name="LoginText" FontFamily="Comic Sans MS"/>
             <TextBox x:Name="Login" />
             <TextBlock Text="Пароль"   x:Name="PasswordText" FontFamily="Comic Sans MS"/>
-            <TextBox x:Name="Password"  />
+            <PasswordBox x:Name="Password"  />
             <Label/>
             <Label/>
             <Button x:Name="EnterAcc" Click="Enter_Click"  Content="Войти"  Background="#BDE2EB" FontFamily="Comic Sans MS"/>

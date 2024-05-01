@@ -6,21 +6,66 @@
         xmlns:local="clr-namespace:Kursovoy.Pages"
         mc:Ignorable="d"
         Title="DataView" Height="450" Width="800"  
-        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
-    
+        >
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="359*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="275*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="59*"/>
         </Grid.RowDefinitions>
-        <StackPanel Background="#BDE2EB" Grid.Row="0" Orientation="Horizontal">
-            <Button Content="Запись на прием" x:Name="Appointment" Margin="5,5,5,4.6" Background="{x:Null}" Width="137"  Click="Appointment_Click" FontFamily="Comic Sans MS"/>
-            <Button Content="Выход" Background="{x:Null}" Width="151" x:Name="Exit"  Margin="490,5,5,4.6"  Click="Exit_Click" Foreground="Black" FontFamily="Comic Sans MS"/>
+        <StackPanel Background="#BDE2EB" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" Width="500">
+                <TextBlock x:Name="Name" Margin="10,10,0,0" Foreground="Black" FontFamily="Comic Sans MS"/>
+               
+            </StackPanel>
+            
+            <Button Content="Выход" Background="{x:Null}" Width="151" Height="30" x:Name="Exit"  Margin="100,5,5,4.6"  Click="Exit_Click" Foreground="Black" FontFamily="Comic Sans MS"/>
 
         </StackPanel>
-        <Frame x:Name="frame"  Grid.Row="1" />
-        <StackPanel Background="#BDE2EB" Grid.Row="4">
+        <ListView x:Name="AppointmentView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=3}" Margin="0,9,0,0" Grid.RowSpan="2" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+
+
+
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Margin="5">
+                                <TextBlock Text="{Binding Path = Patient.FName}" FontFamily="Comic Sans MS"></TextBlock>
+                                <TextBlock Text="{Binding Path = Patient.Name}" FontFamily="Comic Sans MS"></TextBlock>
+                                <TextBlock Text="{Binding Path = Patient.LName}" FontFamily="Comic Sans MS"></TextBlock>
+                                <TextBlock Text="{Binding DateTime, StringFormat='Дата и время приема: {0}'}" FontFamily="Comic Sans MS"></TextBlock>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" >
+
+            <Button x:Name="rebButton" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="163"  Content="Оформить пациента" Click="rebButton_Click"  />
+            <Button x:Name="delButton" Margin="5" Height="30" BorderBrush="Black" Background="#BDE2EB" FontWeight="Bold"  Foreground="Black" Cursor="Hand" Width="163"  Content="Удалить пациента" Click="delButton_Click"  />
+
+        </StackPanel>
+        
+        <StackPanel Background="#BDE2EB" Grid.Row="4" Margin="0,31,0,0"   >
 
         </StackPanel>
 

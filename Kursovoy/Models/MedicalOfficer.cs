@@ -11,7 +11,8 @@ namespace Kursovoy.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class MedicalOfficer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -33,5 +34,23 @@ namespace Kursovoy.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointment { get; set; }
         public virtual Cabinet Cabinet { get; set; }
+
+        public string DepartmentName
+        {
+            get
+            {
+                var DepartmentName = helper.GetContext().Department.Where(p => p.ID_Department == this.ID_Department).FirstOrDefault();
+                return DepartmentName.Name;
+            }
+        }
+
+        public string GenderName
+        {
+            get
+            {
+                var DepartmentName = helper.GetContext().Gender.Where(p => p.ID_Gender == this.ID_Gender).FirstOrDefault();
+                return DepartmentName.Name;
+            }
+        }
     }
 }

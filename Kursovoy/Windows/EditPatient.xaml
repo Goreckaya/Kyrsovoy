@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kursovoy.Windows"
         mc:Ignorable="d"
         Title="EditPatient" Height="500" Width="900"
-        Icon="C:\Users\ADMIN\source\repos\Kyrsovoy\Kursovoy\Resources\logo.png">
+       >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>
@@ -21,13 +21,13 @@
         <ScrollViewer Grid.Row="1" Grid.Column="1">
             <StackPanel>
                 <TextBlock Text="Фамилия:" FontFamily="Comic Sans MS" />
-                <TextBox x:Name="FName" IsReadOnly="True" />
+                <TextBox x:Name="FName" />
                 <Label Height="10"/>
                 <TextBlock Text="Имя:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="Name" IsReadOnly="True"/>
+                <TextBox x:Name="Name" />
                 <Label Height="10"/>
                 <TextBlock Text="Отчество:" FontFamily="Comic Sans MS"/>
-                <TextBox x:Name="LName" IsReadOnly="True"/>
+                <TextBox x:Name="LName" />
                 <Label Height="10"/>
                 <TextBlock Text="Номер телефона:" FontFamily="Comic Sans MS"/>
                 <TextBox x:Name="PhoneNumber"/>
@@ -40,6 +40,22 @@
                 <Label Height="10"/>
                 <TextBlock Text="Пол:" FontFamily="Comic Sans MS"/>
                 <ComboBox x:Name="Gender"/>
+                <Label Height="10"/>
+                <Label Height="10"/>
+                <TextBlock Text="Полис:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Polis"/>
+                <Label Height="10"/>
+                <TextBlock Text="Серия и номер паспорта:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Pasport"/>
+                <Label Height="10"/>
+                <TextBlock Text="Номер снилс:" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="Snils"/>
+                <Label Height="10"/>
+                <TextBlock Text="Гражданство:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Grajdanstvo"/>
+                <Label Height="10"/>
+                <TextBlock Text="Статус:" FontFamily="Comic Sans MS"/>
+                <ComboBox x:Name="Status"/>
 
                 <Label Height="10"/>
                 <Button Content="Изменить данные" Click="EditPatient_Click" x:Name="EditPatientt" Height="50" Background="#BDE2EB" FontFamily="Comic Sans MS"/>

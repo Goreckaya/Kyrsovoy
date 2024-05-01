@@ -44,6 +44,7 @@
     <Property Name="ID_Gender" Type="int" Nullable="false" />
     <Property Name="ID_Department" Type="int" Nullable="false" />
     <Property Name="ID_Cabinet" Type="int" />
+    <Property Name="ID_Vhod" Type="int" />
   </EntityType>
   <EntityType Name="Patient">
     <Key>
@@ -132,6 +133,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_MedicalOfficer_Vhod">
+    <End Role="Vhod" Type="Self.Vhod" Multiplicity="0..1" />
+    <End Role="MedicalOfficer" Type="Self.MedicalOfficer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vhod">
+        <PropertyRef Name="ID_Vhod" />
+      </Principal>
+      <Dependent Role="MedicalOfficer">
+        <PropertyRef Name="ID_Vhod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Patient_Gender">
     <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
     <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
@@ -180,6 +193,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_MedicalOfficer_Cabinet" Association="Self.FK_MedicalOfficer_Cabinet">
       <End Role="Cabinet" EntitySet="Cabinet" />
+      <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalOfficer_Vhod" Association="Self.FK_MedicalOfficer_Vhod">
+      <End Role="Vhod" EntitySet="Vhod" />
       <End Role="MedicalOfficer" EntitySet="MedicalOfficer" />
     </AssociationSet>
     <AssociationSet Name="FK_Patient_Gender" Association="Self.FK_Patient_Gender">

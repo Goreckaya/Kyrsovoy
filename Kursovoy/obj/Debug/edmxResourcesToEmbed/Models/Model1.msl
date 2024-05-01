@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище HospitalModelContainer" CdmEntityContainer="HospitalEntities3">
+  <EntityContainerMapping StorageEntityContainer="Хранилище HospitalModelContainer" CdmEntityContainer="HospitalEntities4">
     <EntitySetMapping Name="Appointment">
       <EntityTypeMapping TypeName="HospitalModel.Appointment">
         <MappingFragment StoreEntitySet="Appointment">
@@ -48,6 +48,7 @@
           <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
           <ScalarProperty Name="ID_Department" ColumnName="ID_Department" />
           <ScalarProperty Name="ID_Cabinet" ColumnName="ID_Cabinet" />
+          <ScalarProperty Name="ID_Vhod" ColumnName="ID_Vhod" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
