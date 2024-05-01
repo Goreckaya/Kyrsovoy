@@ -11,7 +11,8 @@ namespace Kursovoy.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Appointment
     {
         public int ID_Appointment { get; set; }
@@ -34,6 +35,57 @@ namespace Kursovoy.Model
                 else
                 {
                     return dateString + " " + this.Time.ToString();
+                }
+            }
+        }
+        public string PatientFName
+        {
+            get
+            {
+                int IDPacient = this.ID_Patient;
+                var Patient = helper.GetContext().Patient.Where(p => p.ID_Patient == IDPacient).FirstOrDefault();
+                if (Patient != null)
+                {
+                    string PatientFName = Patient.FName;
+                    return PatientFName;
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string PatientName
+        {
+            get
+            {
+                int IDPacient = this.ID_Patient;
+                var Patient = helper.GetContext().Patient.Where(p => p.ID_Patient == IDPacient).FirstOrDefault();
+                if (Patient != null)
+                {
+                    string PatientFName = Patient.Name;
+                    return PatientFName;
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string PatientLName
+        {
+            get
+            {
+                int IDPacient = this.ID_Patient;
+                var Patient = helper.GetContext().Patient.Where(p => p.ID_Patient == IDPacient).FirstOrDefault();
+                if (Patient != null)
+                {
+                    string PatientFName = Patient.LName;
+                    return PatientFName;
+                }
+                else
+                {
+                    return "";
                 }
             }
         }

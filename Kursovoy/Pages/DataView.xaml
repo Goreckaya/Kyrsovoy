@@ -44,9 +44,9 @@
 
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0" Margin="5">
-                                <TextBlock Text="{Binding Path = Patient.FName}" FontFamily="Comic Sans MS"></TextBlock>
-                                <TextBlock Text="{Binding Path = Patient.Name}" FontFamily="Comic Sans MS"></TextBlock>
-                                <TextBlock Text="{Binding Path = Patient.LName}" FontFamily="Comic Sans MS"></TextBlock>
+                                <TextBlock Text="{Binding PatientFName}" FontFamily="Comic Sans MS"></TextBlock>
+                                <TextBlock Text="{Binding PatientName}" FontFamily="Comic Sans MS"></TextBlock>
+                                <TextBlock Text="{Binding PatientLName}" FontFamily="Comic Sans MS"></TextBlock>
                                 <TextBlock Text="{Binding DateTime, StringFormat='Дата и время приема: {0}'}" FontFamily="Comic Sans MS"></TextBlock>
                             </StackPanel>
 
